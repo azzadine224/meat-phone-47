@@ -57,7 +57,10 @@ export default function Page() {
   const locale = pathname.split("/")[1] || "en"; // Default to "en" if no locale is found
 
   // Get the correct description based on the current locale
-  const productDescription = product.description[locale] || product.description["en"];
+  const productDescription = 
+  product?.description?.[locale] 
+  || product?.description?.["en"] 
+  || "Default description";
 
   return (
     <div className="p-4 tracking-wide max-lg:max-w-2xl mx-auto mb-40">
